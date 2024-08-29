@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-const primaryColor = Color(0xff29604E);
+const primaryColor = Color(0xff003366);
 const whiteColor = Colors.white;
 const shadowColor = Color(0xff9EC6B9);
-const textColor = Color(0xff393939);
+const textColor = Color(0xffF7E7CE);
 const mainTextColor = Color(0xff5C5C5C);
 const lightColor = Color(0xff919191);
 const greenColor = Color(0xff57C4B7);
@@ -19,4 +19,5 @@ const redColor = Color(0xffB83232);
 const blackTitleColor = Color(0xff263238);
 const lightTitleColor = Color(0xff898989);
 final bgColor=Colors.grey.shade100;
+final goldcolor=Color(0xffB87333);
 
