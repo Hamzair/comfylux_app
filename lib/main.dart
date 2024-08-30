@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
             title: 'Comfylux',
             debugShowCheckedModeBanner: false,
-            home: const SplashOne(),
+            home: const SplashScreen(),
             // initialBinding: UserBinding(),
           );
         });
