@@ -50,6 +50,8 @@ class SignupView extends StatelessWidget {
                 height: 20.h,
               ),
               InputField(
+                hintStyle: TextStyle(color: Colors.grey),
+
                 label: 'Name',
                 keyboard: TextInputType.name,
                 hint: 'Enter your name',
@@ -58,6 +60,8 @@ class SignupView extends StatelessWidget {
                 height: 20.h,
               ),
               InputField(
+                hintStyle: TextStyle(color: Colors.grey),
+
                 label: 'Email',
                 keyboard: TextInputType.name,
                 hint: 'Enter your email address',
@@ -66,6 +70,8 @@ class SignupView extends StatelessWidget {
                 height: 20.h,
               ),
               InputField(
+                hintStyle: TextStyle(color: Colors.grey),
+
                 label: 'Phone number',
                 keyboard: TextInputType.name,
                 hint: 'Enter phone number',
@@ -74,6 +80,8 @@ class SignupView extends StatelessWidget {
                 height: 20.h,
               ),
               PasswordField(
+                hintStyle: TextStyle(color: Colors.grey),
+
                 label: 'Password',
                 hint: 'Enter your password',
                 keyboard: TextInputType.text,
@@ -84,6 +92,8 @@ class SignupView extends StatelessWidget {
                 height: 20.h,
               ),
               PasswordField(
+                hintStyle: TextStyle(color: Colors.grey),
+
                 label: 'Confirm Password',
                 hint: 'Enter your confirm password',
                 keyboard: TextInputType.text,

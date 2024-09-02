@@ -1,6 +1,7 @@
-import 'package:comfylux/Auth/login_view/signup_view.dart';
+import 'package:comfylux/Auth/signup_view/signup_view.dart';
 import 'package:comfylux/const/assets/image_assets.dart';
 import 'package:comfylux/const/color.dart';
+import 'package:comfylux/nav_bar/nav_bar.dart';
 import 'package:comfylux/widgets/custom_text.dart';
 import 'package:comfylux/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
@@ -43,9 +44,11 @@ class LoginView extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 43.w),
                 child: InputField(
+                  hintStyle: TextStyle(color: Colors.grey),
+
                   label: 'Email',
                   keyboard: TextInputType.name,
-                  hint: 'email',
+                  hint: 'Enter your email address',
                 ),
               ),
               SizedBox(
@@ -54,8 +57,10 @@ class LoginView extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 43.w),
                 child: PasswordField(
-                  label: 'password',
-                  hint: 'password',
+
+                  hintStyle: TextStyle(color: Colors.grey),
+                  label: 'Password',
+                  hint: 'Enter your password',
                   keyboard: TextInputType.text,
 
                 ),
@@ -72,19 +77,27 @@ class LoginView extends StatelessWidget {
               SizedBox(
                 height: 24.h,
               ),
-              Container(
-                width: 304.w,
-                height: 49.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.r),
-                    color: primaryColor),
-                child: Center(
-                    child: MontserratCustomText(
-                  text: 'Login',
-                  textColor: textColor,
-                  fontWeight: FontWeight.w500,
-                  fontsize: 25.sp,
-                )),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+
+                    return AppNavBar();
+                  }));
+                },
+                child: Container(
+                  width: 304.w,
+                  height: 49.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.r),
+                      color: primaryColor),
+                  child: Center(
+                      child: MontserratCustomText(
+                    text: 'LOGIN',
+                    textColor: textColor,
+                    fontWeight: FontWeight.w500,
+                    fontsize: 18.sp,
+                  )),
+                ),
               ),
               SizedBox(
                 height: 23.h,

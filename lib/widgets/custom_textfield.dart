@@ -60,7 +60,8 @@ class InputField extends StatelessWidget {
         hintText: hint,
         hintStyle: hintStyle,
         labelText: label,
-        labelStyle: const TextStyle(color: primaryColor),
+        labelStyle: const TextStyle(color: primaryColor,fontWeight: FontWeight.w400),
+
         // prefixIcon: Padding(
         //   padding: const EdgeInsets.all(15.0),
         //   child: SvgPicture.asset(preIcon),
@@ -140,7 +141,7 @@ class _PasswordFieldState extends State<PasswordField> {
         hintText: widget.hint,
         hintStyle: widget.hintStyle,
         labelText: widget.label,
-        labelStyle: const TextStyle(color: primaryColor),
+        labelStyle: const TextStyle(color: primaryColor,fontWeight: FontWeight.w400,fontSize: 16),
         suffixIcon: GestureDetector(
           onTap: () {
             setState(() {

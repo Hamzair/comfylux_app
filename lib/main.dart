@@ -1,5 +1,6 @@
 import 'package:comfylux/splash/Splash_screen.dart';
 import 'package:comfylux/splash/splash_one.dart';
+import 'package:comfylux/views/profile/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

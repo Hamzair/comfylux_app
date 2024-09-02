@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:comfylux/Auth/login_view/signup_view.dart';
+import 'package:comfylux/Auth/signup_view/signup_view.dart';
 import 'package:comfylux/const/assets/image_assets.dart';
 import 'package:comfylux/const/color.dart';
 import 'package:comfylux/splash/splash_one.dart';

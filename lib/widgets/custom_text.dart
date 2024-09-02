@@ -27,6 +27,7 @@ class PoppinsCustomText extends StatelessWidget {
       text,
       style: GoogleFonts.poppins(
         textStyle: TextStyle(
+
             color: textColor,
             fontSize: fontsize,
             fontWeight: fontWeight,
