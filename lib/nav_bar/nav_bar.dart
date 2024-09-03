@@ -1,5 +1,7 @@
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 import 'package:comfylux/const/color.dart';
+import 'package:comfylux/views/catagories_screen/catagories_screen.dart';
+import 'package:comfylux/views/message_screen/message_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -38,8 +40,8 @@ class _AppNavBarState extends State<AppNavBar> {
 
   List<Widget> bottomBarPages = [
     const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
+    const CatagoriesScreen(),
+    const MessageScreen(),
     const ProfileScreen(),
   ];
 

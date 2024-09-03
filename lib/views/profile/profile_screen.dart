@@ -1,3 +1,4 @@
+import 'package:comfylux/Auth/login_view/login_view.dart';
 import 'package:comfylux/const/assets/image_assets.dart';
 import 'package:comfylux/const/color.dart';
 import 'package:comfylux/views/profile/edit_profile.dart';
@@ -27,22 +28,12 @@ class ProfileScreen extends StatelessWidget {
             ),
             child: Stack(
               clipBehavior: Clip.none,
+              alignment: Alignment.center,
               children: [
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 15.w, top: 15.h),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Icon(
-                          Icons.arrow_back_ios,
-                          color: goldcolor,
-                        ),
-                      ),
-                    ),
                     Center(
                       child: MontserratCustomText(
                         text: 'PROFILE',
@@ -54,11 +45,10 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
                 Positioned(
-                    left: 130.w,
                     top: 95.h,
                     child: CircleAvatar(
                       backgroundImage: AssetImage(AppImages.profile),
-                      radius: 50,
+                      radius: 65,
                     )),
               ],
             ),
@@ -129,25 +119,36 @@ class ProfileScreen extends StatelessWidget {
           SizedBox(
             height: 18.h,
           ),
-          Container(
-            width: 162.w,
-            height: 51.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30.r),
-              color: primaryColor,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-              Image.asset(AppImages.logout,width: 28.w,height: 23.h,),
-              MontserratCustomText(
-                text: 'Logout',
-                textColor: whiteColor,
-                fontWeight: FontWeight.w700,
-                fontsize: 17.sp,
+          GestureDetector(
+            // onTap: () {
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) {
+            //     return LoginView();
+            //   }));
+            // },
+            child: Container(
+              width: 162.w,
+              height: 51.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.r),
+                color: primaryColor,
               ),
-
-            ],),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    AppImages.logout,
+                    width: 28.w,
+                    height: 23.h,
+                  ),
+                  MontserratCustomText(
+                    text: 'Logout',
+                    textColor: whiteColor,
+                    fontWeight: FontWeight.w700,
+                    fontsize: 17.sp,
+                  ),
+                ],
+              ),
+            ),
           )
         ],
       ),

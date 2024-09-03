@@ -84,19 +84,22 @@ class LoginView extends StatelessWidget {
                     return AppNavBar();
                   }));
                 },
-                child: Container(
-                  width: 304.w,
-                  height: 49.h,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.r),
-                      color: primaryColor),
-                  child: Center(
-                      child: MontserratCustomText(
-                    text: 'LOGIN',
-                    textColor: textColor,
-                    fontWeight: FontWeight.w500,
-                    fontsize: 18.sp,
-                  )),
+                child: Padding(
+                  padding:  EdgeInsets.symmetric(horizontal: 45.w),
+                  child: Container(
+                    width: 304.w,
+                    height: 49.h,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.r),
+                        color: primaryColor),
+                    child: Center(
+                        child: MontserratCustomText(
+                      text: 'LOGIN',
+                      textColor: textColor,
+                      fontWeight: FontWeight.w500,
+                      fontsize: 18.sp,
+                    )),
+                  ),
                 ),
               ),
               SizedBox(

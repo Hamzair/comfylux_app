@@ -65,313 +65,329 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: whiteColor,
-      appBar: AppBar(
-        toolbarHeight: 120.h,
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        title: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(
-                  AppImages.drawer,
-                  height: 40.h,
-                  width: 44.w,
-                ),
-                Image.asset(
-                  AppImages.comfylux,
-                  height: 31.h,
-                  width: 185.w,
-                ),
-                Image.asset(
-                  AppImages.cartIcon1,
-                  height: 40.h,
-                  width: 44.w,
-                )
-              ],
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            SizedBox(
-              width: 366.w,
-              height: 50.h,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12.w),
-                child: TextField(
-                  onChanged: (val) {},
-                  style: GoogleFonts.montserratAlternates(
-                      textStyle: TextStyle(
-                          color: primaryColor,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w400)),
-                  decoration: InputDecoration(
-                    suffixIcon: Icon(
-                      Icons.search,
-                      color: primaryColor,
-                      size: 35,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: goldcolor,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: goldcolor,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.r),
-                      borderSide: BorderSide(color: goldcolor, width: 2),
-                    ),
-                    fillColor: whiteColor,
-                    filled: true,
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-                    hintText: 'Search',
-                    hintStyle: GoogleFonts.montserratAlternates(
-                        textStyle: TextStyle(
-                            color: Color(0xff000000).withOpacity(0.33),
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w500)),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+
+      },
+      child: Scaffold(
         backgroundColor: whiteColor,
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 15.h,
-            ),
-            SizedBox(
-              height: 200.h,
-              child: PageView.builder(
-                  controller: PageController(viewportFraction: 0.85),
-                  padEnds: false,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: images.length,
-                  clipBehavior: Clip.none,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Stack(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16.0),
-                              image: DecorationImage(
-                                image: AssetImage(images[index]),
-                                fit: BoxFit.contain,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.4),
-                              borderRadius: BorderRadius.circular(16.0),
-                            ),
-                            child: Center(
-                              child: PoppinsCustomText(
-                                fontWeight: FontWeight.w400,
-                                textColor: primaryColor,
-                                fontsize: 30.sp,
-                                text: 'New Collection',
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  }),
-            ),
-            SizedBox(
-              height: 31.h,
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 5.w),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                    catagory.length,
-                    (index) => GestureDetector(
-                      onTap: () {
-                        homeController.selectedindex.value = index;
-                      },
-                      child: Obx(() => Container(
-                            padding: EdgeInsets.symmetric(horizontal: 4.w),
-                            height: 44.h,
-                            margin: EdgeInsets.symmetric(horizontal: 5.w),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.r),
-                              color: homeController.selectedindex.value == index
-                                  ? primaryColor
-                                  : Colors.white,
-                              border: Border.all(
-                                  width: 1,
-                                  color: homeController.selectedindex.value ==
-                                          index
-                                      ? primaryColor
-                                      : goldcolor),
-                            ),
-                            child: Center(
-                                child: MontserratAlternateCustomText(
-                              text: catagory[index],
-                              textColor:
-                                  homeController.selectedindex.value == index
-                                      ? Colors.white
-                                      : goldcolor,
-                              fontWeight: FontWeight.w500,
-                              fontsize: 18.sp,
-                            )),
-                          )),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 17.h,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.w),
-              child: Row(
+        appBar: AppBar(
+          surfaceTintColor: Colors.transparent,
+          toolbarHeight: 120.h,
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          title: Column(
+            children: [
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  MontserratCustomText(
-                    text: 'Flash Sale',
-                    textColor: primaryColor,
-                    fontWeight: FontWeight.w700,
-                    fontsize: 20.sp,
+                  Image.asset(
+                    AppImages.drawer,
+                    height: 40.h,
+                    width: 44.w,
                   ),
-                  MontserratCustomText(
-                    text: 'View all',
-                    textColor: primaryColor,
-                    fontWeight: FontWeight.w500,
-                    fontsize: 15.sp,
+                  Image.asset(
+                    AppImages.comfylux,
+                    height: 31.h,
+                    width: 185.w,
+                  ),
+                  Image.asset(
+                    AppImages.cartIcon1,
+                    height: 40.h,
+                    width: 44.w,
                   )
                 ],
               ),
-            ),
-            // SizedBox(
-            //   height: 10.h,
-            // ),
-            // Updated MasonryView
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return HomeDetailScreen();
-                }));
-              },
-              child: MasonryView(
-                  // itemPadding: 0,
-                  //  itemRadius: 0,
-                  listOfItem: productList, // Pass the product list here
-                  numberOfColumn: 2,
-                  itemBuilder: (productDatum) {
-                    final product = productDatum
-                        as Map<String, dynamic>; // Cast the item to Product
-                    return Column(
-                      // mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 280.h,
-                          width: 160.w,
-                          child: Center(
-                            child: Container(
-                              height: 250.h,
-                              width: 160.w,
+              SizedBox(
+                height: 20.h,
+              ),
+              SizedBox(
+                width: 366.w,
+                height: 50.h,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 12.w),
+                  child: TextField(
+                    onChanged: (val) {},
+                    style: GoogleFonts.montserratAlternates(
+                        textStyle: TextStyle(
+                            color: primaryColor,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400)),
+                    decoration: InputDecoration(
+                      suffixIcon: Icon(
+                        Icons.search,
+                        color: primaryColor,
+                        size: 35,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: goldcolor,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: goldcolor,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.r),
+                        borderSide: BorderSide(color: goldcolor, width: 2),
+                      ),
+                      fillColor: whiteColor,
+                      filled: true,
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+                      hintText: 'Search',
+                      hintStyle: GoogleFonts.montserratAlternates(
+                          textStyle: TextStyle(
+                              color: Color(0xff000000).withOpacity(0.33),
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w500)),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          backgroundColor: whiteColor,
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 15.h,
+              ),
+              SizedBox(
+                height: 200.h,
+                child: PageView.builder(
+                    controller: PageController(viewportFraction: 0.85),
+                    padEnds: false,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: images.length,
+                    clipBehavior: Clip.none,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
+                          children: [
+                            Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20.r),
-                                border: Border.all(color: goldcolor),
+                                borderRadius: BorderRadius.circular(16.0),
+                                image: DecorationImage(
+                                  image: AssetImage(images[index]),
+                                  fit: BoxFit.contain,
+                                ),
                               ),
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                // clipBehavior: Clip.hardEdge,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          height: 120.h,
-                                          decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                              image:
-                                                  AssetImage(product['image']),
-                                              fit: BoxFit.cover,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.black.withOpacity(0.4),
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Center(
+                                child: PoppinsCustomText(
+                                  fontWeight: FontWeight.w400,
+                                  textColor: primaryColor,
+                                  fontsize: 30.sp,
+                                  text: 'New Collection',
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+              ),
+              SizedBox(
+                height: 31.h,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 5.w),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                      catagory.length,
+                      (index) => GestureDetector(
+                        onTap: () {
+                          homeController.selectedindex.value = index;
+                        },
+                        child: Obx(() => Container(
+                              padding: EdgeInsets.symmetric(horizontal: 4.w),
+                              height: 44.h,
+                              margin: EdgeInsets.symmetric(horizontal: 5.w),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.r),
+                                color: homeController.selectedindex.value == index
+                                    ? primaryColor
+                                    : Colors.white,
+                                border: Border.all(
+                                    width: 1,
+                                    color: homeController.selectedindex.value ==
+                                            index
+                                        ? primaryColor
+                                        : goldcolor),
+                              ),
+                              child: Center(
+                                  child: MontserratAlternateCustomText(
+                                text: catagory[index],
+                                textColor:
+                                    homeController.selectedindex.value == index
+                                        ? Colors.white
+                                        : goldcolor,
+                                fontWeight: FontWeight.w500,
+                                fontsize: 18.sp,
+                              )),
+                            )),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 17.h,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    MontserratCustomText(
+                      text: 'Flash Sale',
+                      textColor: primaryColor,
+                      fontWeight: FontWeight.w700,
+                      fontsize: 20.sp,
+                    ),
+                    MontserratCustomText(
+                      text: 'View all',
+                      textColor: primaryColor,
+                      fontWeight: FontWeight.w500,
+                      fontsize: 15.sp,
+                    )
+                  ],
+                ),
+              ),
+              // SizedBox(
+              //   height: 10.h,
+              // ),
+              // Updated MasonryView
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return HomeDetailScreen();
+                  }));
+                },
+                child: MasonryView(
+                    // itemPadding: 0,
+                    //  itemRadius: 0,
+                    listOfItem: productList, // Pass the product list here
+                    numberOfColumn: 2,
+                    itemBuilder: (productDatum) {
+                      final product = productDatum
+                          as Map<String, dynamic>; // Cast the item to Product
+                      return Column(
+                        // mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 280.h,
+                            width: 160.w,
+                            child: Center(
+                              child: Container(
+                                height: 250.h,
+                                width: 160.w,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20.r),
+                                  border: Border.all(color: goldcolor),
+                                ),
+                                child: Stack(
+                                  clipBehavior: Clip.none,
+                                  // clipBehavior: Clip.hardEdge,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Align(
+                                            alignment: Alignment.center,
+                                            child: Container(
+                                              height: 110.h,
+                                              // width: 120.w,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                  image: AssetImage(
+                                                      product['image']),
+                                                  fit: BoxFit.contain,
+                                                ),
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  Positioned(
-                                    top: -15,
-                                    right: -15,
-                                    child: FloatingActionButton(
-                                      // clipBehavior: Clip.hardEdge,
-                                      onPressed: () {
-                                        // Handle button press
-                                      },
-                                      backgroundColor: goldcolor,
-                                      mini: true,
-                                      child: Center(
-                                          child: Icon(
-                                        Icons.add,
-                                        color: whiteColor,
-                                        size: 30,
-                                      )),
+                                    Positioned(
+                                      top: -15,
+                                      right: -15,
+                                      child: FloatingActionButton(
+                                        // clipBehavior: Clip.hardEdge,
+                                        onPressed: () {
+                                          // Handle button press
+                                        },
+                                        backgroundColor: goldcolor,
+                                        mini: true,
+                                        child: Center(
+                                            child: Icon(
+                                          Icons.add,
+                                          color: whiteColor,
+                                          size: 25,
+                                        )),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        // SizedBox(height: 5),
-                        Padding(
-                          padding: EdgeInsets.only(left: 10),
-                          child: MontserratCustomText(
-                            textColor: primaryColor,
-                            fontWeight: FontWeight.w700,
-                            fontsize: 20.sp,
-                            text: product['name'], // Display the product name
+                          // SizedBox(height: 5),
+                          Padding(
+                            padding: EdgeInsets.only(left: 10),
+                            child: SizedBox(
+                              width: 250.w,
+                              child: MontserratCustomText(
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                textColor: primaryColor,
+                                fontWeight: FontWeight.w700,
+                                fontsize: 18.sp,
+                                text: product['name'], // Display the product name
+                              ),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 10),
-                          child: MontserratAlternateCustomText(
-                            textColor: primaryColor,
-                            fontWeight: FontWeight.w500,
-                            fontsize: 20.sp,
-                            text: product['price'], // Display the product price
+                          Padding(
+                            padding: EdgeInsets.only(left: 10),
+                            child: MontserratAlternateCustomText(
+                              textColor: primaryColor,
+                              fontWeight: FontWeight.w500,
+                              fontsize: 16.sp,
+                              text: product['price'], // Display the product price
+                            ),
                           ),
-                        ),
-                      ],
-                    );
-                  }),
-            ),
-            SizedBox(
-              height: 120.h,
-            ),
-          ],
+                        ],
+                      );
+                    }),
+              ),
+              SizedBox(
+                height: 120.h,
+              ),
+            ],
+          ),
         ),
       ),
     );
