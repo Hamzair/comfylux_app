@@ -1,7 +1,8 @@
 import 'package:comfylux/Auth/login_view/login_view.dart';
 import 'package:comfylux/const/assets/image_assets.dart';
 import 'package:comfylux/const/color.dart';
-import 'package:comfylux/views/profile/edit_profile.dart';
+import 'package:comfylux/views/profile/components/change_password.dart';
+import 'package:comfylux/views/profile/components/edit_profile.dart';
 import 'package:comfylux/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -48,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
                     top: 95.h,
                     child: CircleAvatar(
                       backgroundImage: AssetImage(AppImages.profile),
-                      radius: 65,
+                      radius: 50,
                     )),
               ],
             ),
@@ -87,7 +88,9 @@ class ProfileScreen extends StatelessWidget {
             iconColor: primaryColor,
             iconScale: 6,
             onTap: () {
-              // Handle the tap event
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ChangePassword();
+              }));// Handle the tap event
             },
           ),
           SizedBox(

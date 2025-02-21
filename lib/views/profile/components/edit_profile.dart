@@ -22,7 +22,6 @@ class _EditProfileState extends State<EditProfile> {
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
-
       },
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -73,64 +72,34 @@ class _EditProfileState extends State<EditProfile> {
                       return userController.imageFile != null
                           ? Positioned(
                               top: 90.h,
-                              child: GestureDetector(
-                                onTap: () {
-                                  userController.pickImage();
-                                },
-                                child: Container(
-                                  height: 128.h,
-                                  width: 128.w,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Colors.transparent,
-                                      image: DecorationImage(
-                                          image:
-                                              FileImage(userController.imageFile!
-                                                  // height: 14.h,
-                                                  // width: 26.w,
-                                                  ),
-                                          fit: BoxFit.cover)),
-                                ),
+                              child: Container(
+                                height: 128.h,
+                                width: 128.w,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.transparent,
+                                    image: DecorationImage(
+                                        image: FileImage(
+                                            userController.imageFile!
+                                            // height: 14.h,
+                                            // width: 26.w,
+                                            ),
+                                        fit: BoxFit.cover)),
                               ),
                             )
                           : Positioned(
                               top: 90.h,
-                              child: GestureDetector(
-                                onTap: () {
-                                  userController.pickImage();
-                                },
-                                child: Container(
-                                  height: 128.h,
-                                  width: 128.w,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.transparent,
-                                  ),
-                                  child: Stack(
-                                    alignment: Alignment.center,
-                                    clipBehavior: Clip.none,
-                                    children: [
-                                      GestureDetector(
-                                        onTap: () {
-                                          userController.pickImage();
-                                        },
-                                        child: CircleAvatar(
-                                          backgroundImage:
-                                              AssetImage(AppImages.profile),
-                                          radius: 65,
-                                        ),
-                                      ),
-                                      Positioned(
-                                        right: 0,
-                                        bottom: 0,
-                                        child: Image.asset(
-                                          AppImages.cameraicon,
-                                          height: 36.h,
-                                          width: 36.w,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                              child: Container(
+                                height: 128.h,
+                                width: 128.w,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.transparent,
+                                ),
+                                child: CircleAvatar(
+                                  backgroundImage:
+                                      AssetImage(AppImages.profile),
+                                  radius: 65,
                                 ),
                               ));
                     })
@@ -153,7 +122,31 @@ class _EditProfileState extends State<EditProfile> {
                 ),
               ),
               SizedBox(
-                height: 120.h,
+                height: 100.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  userController.pickImage();
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+                  margin: EdgeInsets.symmetric(horizontal: 45.w),
+                  // width: 100.w,
+                  // height: 50.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.r),
+                    color: primaryColor,
+                  ),
+                  child: MontserratCustomText(
+                    text: 'Change Image',
+                    textColor: whiteColor,
+                    fontWeight: FontWeight.w600,
+                    fontsize: 16.sp,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 18.h,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.w),

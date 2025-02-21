@@ -218,8 +218,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           homeController.selectedindex.value = index;
                         },
                         child: Obx(() => Container(
-                              padding: EdgeInsets.symmetric(horizontal: 4.w),
-                              height: 44.h,
+                              padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 3.h),
+                              // height: 44.h,
                               margin: EdgeInsets.symmetric(horizontal: 5.w),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.r),
