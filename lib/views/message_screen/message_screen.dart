@@ -7,7 +7,7 @@ class MessageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: whiteColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

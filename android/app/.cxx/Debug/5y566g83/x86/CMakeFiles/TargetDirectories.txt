@@ -1,0 +1,2 @@
+/run/media/adil/GameDev/Projects/Flutter/comfylux_app/android/app/.cxx/Debug/5y566g83/x86/CMakeFiles/edit_cache.dir
+/run/media/adil/GameDev/Projects/Flutter/comfylux_app/android/app/.cxx/Debug/5y566g83/x86/CMakeFiles/rebuild_cache.dir
