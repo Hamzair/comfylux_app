@@ -19,5 +19,5 @@ const redColor = Color(0xffB83232);
 const blackTitleColor = Color(0xff263238);
 const lightTitleColor = Color(0xff898989);
 final bgColor=Colors.grey.shade100;
-final goldcolor=Color(0xffB87333);
+const goldcolor=Color(0xffB87333);
 
